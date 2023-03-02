@@ -1,0 +1,13 @@
+.sty{
+  display: flex;
+  align-items: center;
+  background-color: aqua;
+  height: 600px;
+  width: 600px;
+  margin: 0;
+}
+
+.ff {
+  background-color: brown;
+  margin: 0;
+}

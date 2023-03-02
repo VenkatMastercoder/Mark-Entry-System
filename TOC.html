@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+      <!--Bootstarp UI-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+  
+    <link rel="stylesheet" href="s.css">
+  </head>
+<body>
+  <div class="gg">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="ff">
+            <form class="cc text-center">
+              <label>TOC</label>
+              Name : <input type="text" id="name" class="input-1"/>
+              <br/>
+              Roll No : <input type="text" id="RollNo" class="input-2"/>
+              <br/>
+              Marks : <input type="text" id="marks" class="input-3"/>
+              <br/> 
+
+              <div class="d-flex justify-content-around btn-div">
+                <button id="Btn">Add</button>
+      
+                <button id="BtnUpdate">Update</button>
+
+                <button id="BtnSelect">Check</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <table class="table">
+            <thead>
+              <th>Roll_No</th>
+              <th>Name</th>
+              <th>Marks</th>
+            </thead>
+            <tbody id="tb1"></tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <script type="module">
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDEpVRMTFDfLSHSZtTqHgJgKSFy80U7AdQ",
+      authDomain: "student-mark-entry-system.firebaseapp.com",
+      databaseURL: "https://student-mark-entry-system-default-rtdb.firebaseio.com",
+      projectId: "student-mark-entry-system",
+      storageBucket: "student-mark-entry-system.appspot.com",
+      messagingSenderId: "596956330864",
+      appId: "1:596956330864:web:c9c4e9703e4dca2e272db5",
+      measurementId: "G-RTSFDSFYTJ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase,ref,get,update,set,child,remove,onValue} 
+    from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
+    const db = getDatabase();
+
+    // == Ref Variable == //
+    
+    var name = document.getElementById("name");
+    var marks = document.getElementById("marks");
+    var RollNo = document.getElementById("RollNo");
+
+    let btn = document.getElementById("Btn");
+    let BtnUpdates = document.getElementById("BtnUpdate");
+    let BtnSelect = document.getElementById("BtnSelect");
+    
+    // == Function to Add Value == //
+
+    btn.onclick = function InsertData() {
+
+      set(ref(db,"CSE-C/"+RollNo.value),{
+        Name : name.value,
+        Roll_No : parseInt(RollNo.value),
+        Marks : { 
+          IA_1 : {
+            TOC : parseInt(marks.value) 
+          } 
+        }
+
+      })
+      .then(()=>{
+        alert("Data inserted successfully");
+      })
+      .catch((error)=>{
+        alert("Error inserting data"+error)
+      })
+
+    }
+
+    // == Function to SelectData Value == //
+    
+    BtnSelect.onclick = function SelectData() {
+      alert("hi")
+      const dbref = ref(db);
+      get(child(dbref,"CSE-C/"+RollNo.value)).then((snapshot)=>{
+        if(snapshot.exists()) { 
+          name.value = snapshot.val().Name;
+         }
+         else {
+          alert("No Data");
+         }
+      }).catch((error)=>{alert("Error data"+error)})
+    }
+
+    // == Function to Update Value == //
+
+    BtnUpdates.onclick = function UpdateData() {
+
+      update(ref(db,"CSE-C/"+RollNo.value+"/"+"Marks/"+"IA_1/"),{
+        TOC : parseInt(marks.value)
+        
+      })
+      .then(()=>{
+        alert("Data Upadate successfully");
+        GetAllData();
+      })
+      .catch((error)=>{
+        alert("Error inserting data"+error)
+      })
+
+      
+    }
+
+    function addItemsToTable(st) {
+
+    let a = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+
+    let TdValueMarks;
+    let TdValueRollNo;
+    let TdValueNames;
+    
+    let ab = [st[0]];
+
+    for (let i of ab){
+      console.log("hiiii:",i);
+      TdValueMarks = i.IA_1.TOC;
+    }
+
+    TdValueRollNo = st[2];
+    TdValueNames = st[1];
+
+    console.log(TdValueMarks);
+
+    td1.innerHTML = TdValueRollNo;
+    td2.innerHTML = TdValueNames;
+    td3.innerHTML = TdValueMarks;
+
+
+    a.appendChild(td1);
+    a.appendChild(td2);
+    a.appendChild(td3);
+
+    o.appendChild(a);
+  }
+    
+    var o = document.getElementById("tb1");
+
+    function GetAllData() {
+
+      const dbref = ref(db);
+      alert("hello");
+      get(child(dbref,"CSE-C/"+RollNo.value)).then((snapshot)=>{
+
+      var st = [];
+
+      snapshot.forEach(childSnapshot => {
+          st.push(childSnapshot.val());
+      });
+
+      console.log(st);
+      addItemsToTable(st);
+      st = []; 
+      });      
+    }
+
+    
+
+    
+  </script>
+</body>
+</html>

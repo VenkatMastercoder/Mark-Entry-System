@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Poppins:wght@200;300;600;700;800;900&family=Roboto&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root {
+  --primary-color: #F8F9FB;
+  --secondary-color: #474BFF;
+  --Tertiary-color: #F1F2FB;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --text-color: #26274B;
+
+  --poppins: 'poppins',sans-serif;
+  --Manrope: 'Manrope', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Space-Grotest: 'Space Grotesk', sans-serif;
+  ;
+}
+
+html {
+  scroll-behavior: smooth; 
+ }
+ 
+body {
+   font-family: "Poppins", sans-serif;
+   -webkit-touch-callout: none;
+   /* iOS Safari */
+   -webkit-user-select: none;
+   /* Safari */
+   -khtml-user-select: none;
+   /* Konqueror HTML */
+   -moz-user-select: none;
+   /* Old versions of Firefox */
+   -ms-user-select: none;
+   /* Internet Explorer/Edge */
+   user-select: none;
+   /* Non-prefixed version, currently
+                                   supported by Chrome, Edge, Opera and Firefox */
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+   
+}
+ 
+ 
+*,
+*:before,
+*:after {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+.gg {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.ff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+
+  background-color: var(--Tertiary-color);
+}
+
+.input-style{
+  margin: 5px;
+}
+
+.cc {
+  display: flex;
+  flex-direction: column;
+  background-color: #2691d9;
+  line-height: 30px;
+  padding: 15px;
+  width: 300px;
+  height: 350px;
+}
+
+input,p {
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  height: 45px;
+}
+
+.login-section {
+  justify-content: center;
+  background-color: var(--primary-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NewButtonStyle, 
+.btn-style{
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  width:155px;
+  border-radius: 8px;
+  height: 35px;
+  border-width: 0;
+  margin-left: 5px;
+}
+
+.main-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.main-div h1{
+  text-align: main-div;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.main-div form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+
+input[type="submit"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+.signup_link{
+  margin: 30px 0;
+  text-align: main-div;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a{
+  color: #2691d9;
+  text-decoration: none;
+}
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+.ddss{
+  border-width: 1;
+  border-style: dashed;
+  padding: 16px;
+}

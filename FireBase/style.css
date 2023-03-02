@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Poppins:wght@200;300;600;700;800;900&family=Roboto&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #F8F9FB;
+  --secondary-color: #474BFF;
+  --Tertiary-color: #F1F2FB;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --text-color: #26274B;
+
+  --poppins: 'poppins',sans-serif;
+  --Manrope: 'Manrope', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Space-Grotest: 'Space Grotesk', sans-serif;
+  ;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--primary-color);
+}
+
+
+.login-section{
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.heading-div {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: var(--poppins);
+}
+.a {
+  background-color: var(--Tertiary-color);
+}
+.main-div {
+  width: auto;
+}
+
+.txtfield{
+  background-color: antiquewhite;
+}
+
+.input-field {
+  height: 40px;
+  width: 250px;
+  padding: 5px;
+  border-radius: 9px;
+  border-width: 0;
+  border-style: solid;
+} 
+
+.bu-btn {
+  width: 150px;
+  height: 55px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 12px;
+  border-width: 0;
+  border-style: solid;
+}

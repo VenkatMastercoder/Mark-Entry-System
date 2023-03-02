@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Poppins:wght@200;300;600;700;800;900&family=Roboto&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root {
+  --primary-color: #F8F9FB;
+  --secondary-color: #474BFF;
+  --Tertiary-color: #F1F2FB;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --text-color: #26274B;
+
+  --poppins: 'poppins',sans-serif;
+  --Manrope: 'Manrope', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Space-Grotest: 'Space Grotesk', sans-serif;
+  ;
+}
+
+body {
+  font-family: var(--poppins);
+}
+
+.gg {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.ff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+
+  background-color: var(--Tertiary-color);
+}
+
+.cc {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  line-height: 30px;
+  padding: 15px;
+  width: 300px;
+}
+
+.StudentBtn {
+  background-color: var(--secondary-color);
+  font-family: var(--poppins);
+  width: 105px;
+  color: var(--white-color);
+  border-radius: 8px;
+  border-width: 0;
+  outline-width: 0;
+}
+
+.CheckBtn {
+  background-color: var(--secondary-color);
+  font-family: var(--poppins);
+  width: 105px;
+  color: var(--white-color);
+  border-radius: 8px;
+  border-width: 0;
+  outline-width: 0;
+
+}
+
+.UpdateBtn {
+  background-color: var(--secondary-color);
+  font-family: var(--poppins);
+  width: 105px;
+  color: var(--white-color);
+  border-radius: 8px;
+  border-width: 0;
+  outline-width: 0;
+}
+
+.btn-div{
+  gap :10px;
+  padding: 10px;
+}
+
+.input-1,.input-2,.input-3 {
+  border-radius: 6px;
+  border-width: 0;
+  height: 35px;
+  font-family: var(--poppins);
+
+}

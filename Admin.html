@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Bootstarp UI-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+
+  <link rel="stylesheet" href="https://kit.fontawesome.com/bedaa6a20e.css" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" />
+
+  
+     
+
+  <!--JavaScript-->                                          
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="./Aseets/CIT.png" alt="">
+            </div>
+
+            <span class="logo_name">CitMarkSystem</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Content</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Analytics</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Like</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Comment</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-share"></i>
+                    <span class="link-name">Share</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <p>HOD Dash Board</p>
+            
+            <img src="./Aseets/CIT.png" alt="">
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+
+                <div class="boxes">
+                    <div class="box box1">
+                      <i class="fa-sharp fa-regular fa-screen-users"></i>
+                      
+                        <span class="text">Total Student</span>
+                        <span class="number">192</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Staff</span>
+                        <span class="number">20</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Total Share</span>
+                        <span class="number">10,120</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Recent Activity</span>
+                </div>
+
+                <div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 pt-5">
+                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item " role="presentation">
+                              <button class="nav-link active" id="pills-Detail-View-tab" data-toggle="pill" data-target="#pills-Detail-View" type="button" role="tab" aria-controls="pills-Detail-View" aria-selected="true">Detail-View</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="pills-Fail-List-tab" data-toggle="pill" data-target="#pills-Fail-List" type="button" role="tab" aria-controls="pills-Fail-List" aria-selected="false">Fail-List</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="pills-Topper-List-tab" data-toggle="pill" data-target="#pills-Topper-List" type="button" role="tab" aria-controls="pills-Topper-List" aria-selected="false">Topper-List</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-Detail-View" role="tabpanel" aria-labelledby="pills-Detail-View-tab">
+              
+                              <div class="table-responsive-lg">
+                                <table id="example1" class="table table-striped table-bordered text-center ">
+                                  <thead>
+                                    <th>S.No</th>
+                                    <th>Roll_No</th>
+                                    <th>Name</th>
+                                    <th>Marks</th>
+                                    <th>Section</th>
+                                  </thead>
+                                  <tbody id="tb1"></tbody>
+                                </table>
+                              </div>
+                        
+                            </div>
+                            <div class="tab-pane fade" id="pills-Fail-List" role="tabpanel" aria-labelledby="pills-Fail-List-tab">
+              
+                                <table id="example2" class="table table-striped table-bordered text-center" style="width:100%">
+                                  <thead>
+                                    <th>S.No</th>
+                                    <th>Roll_No</th>
+                                    <th>Name</th>
+                                    <th>Marks</th>
+                                    <th>Section</th>
+                                  </thead>
+                                  <tbody id="tb2"></tbody>
+                                </table>
+                            </div>
+              
+                            <div class="tab-pane fade" id="pills-Topper-List" role="tabpanel" aria-labelledby="pills-Topper-List-tab">
+                              
+                                <table id="example3" class="table table-striped table-bordered text-center ">
+                                  <thead class="thead-light bg-info text-white">
+                                    <th>S.No</th>
+                                    <th>Roll_No</th>
+                                    <th>Name</th>
+                                    <th>Marks</th>
+                                    <th>Section</th>
+                                  </thead>
+                                  <tbody id="tb3"></tbody>
+                                </table>
+                            
+                            </div>
+                          </div>   
+                      </div>
+                    </div>
+              
+                    <div class="row">
+                      <div class="col-12">
+                        <button id="getAnalyticsBtn" class="btn btn-primary">Get Analytics</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/bedaa6a20e.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
+  
+  <script type="module" src="./HOD/App.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
